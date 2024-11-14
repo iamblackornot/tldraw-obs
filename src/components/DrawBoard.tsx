@@ -12,6 +12,11 @@ const DrawBoard: React.FC<DrawBoardProps> = (props: DrawBoardProps) => {
 
     const store = useSyncDemo({ roomId: import.meta.env.VITE_ROOM_ID });
 
+    let style: object = { position: 'fixed', inset: 0 };
+    // if(props.readOnly) {
+    //     style = { '--color-background': 'rgba(255, 255, 255, 0) !important', ...style }
+    // }
+
 	const handleMount = (editor: Editor) => {
 
         const id: TLShapeId = 'shape:captureFrame' as TLShapeId;
@@ -61,8 +66,9 @@ const DrawBoard: React.FC<DrawBoardProps> = (props: DrawBoardProps) => {
 	}
 
 	return (
-		<div style={{ position: 'fixed', inset: 0 }}>
+		<div style={style} className={props.readOnly ? 'tl-theme__dark--readonly' : ''}>
 			<Tldraw
+                inferDarkMode
                 store={store} 
                 hideUi={props.readOnly}
                 onMount={handleMount} />

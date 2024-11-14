@@ -1,0 +1,3 @@
+.tl-theme__dark--readonly .tl-theme__dark {
+	--color-background: rgba(255, 255, 255, 0) !important;
+  }

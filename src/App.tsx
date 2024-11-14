@@ -5,6 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import './App.css'
+
 import View from "./routes/View";
 import Root from "./routes/Root";
 import ViewFull from "./routes/ViewFull";
